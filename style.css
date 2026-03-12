@@ -1,0 +1,291 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+header {
+    background: #00154c;
+    padding: 15px 40px;
+}
+
+nav {
+    display: grid;
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+.logo {
+    color: white;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style: none;
+    display: grid;
+    grid-auto-flow: column;
+    justify-content: end;
+    gap: 1em;
+}
+
+nav ul li a {
+    text-decoration:none;
+    color:#545454;
+    padding: 0.8em;;
+    background:#5ce1e6;
+    border-radius:8px;
+    border:1px solid transparent;
+    font-size:0.8em;
+    transition:all 0.25s ease;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    background:#38bdf8;
+    color:#5ce1e6;
+    border-color:#38bdf8;
+    transform:translateY(-2px);
+}
+
+main {
+    width: 100%;
+}
+
+.first_image{
+    display: grid;
+    grid-template-areas: "stack";
+    width: 100%;
+}
+
+.first_image > *{
+    grid-area: stack;
+}
+
+.first_image img{
+    width: 100%;
+    height: auto;
+}
+
+.overlay{
+    background: linear-gradient(
+        to right,
+        rgba(255,255,255,0.5),
+        rgba(0,0,0,0.7)
+    );
+}
+
+.text{
+    display: grid;
+    justify-content: end;
+    align-content: center;
+    padding-right: 5%;
+    color: white;
+    text-align: right;
+}
+
+.title{
+    font-weight: 800;
+    font-size: 2rem;
+    line-height: 1.3;
+}
+
+.demo{
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.yapping-section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 80px 8%;
+    background: #f3f3f3;
+    gap: 40px;
+    width: 100%;
+}
+
+
+
+/* text area */
+.yapping-text{
+    max-width: 550px;
+}
+
+.yapping-title{
+    color: #5bb6b3;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.yapping-title h2{
+    font-size: 2.5rem;
+    color: #1b2c55;
+    margin-bottom: 15px;
+    font-weight: 800;
+}
+
+.yapping-desc{
+    color: #2c3a5a;
+    line-height: 1.6;
+    font-size: 1.1rem;
+}
+
+/* image area */
+.yapping-image{
+    display: grid;
+    justify-content: end;
+    align-items: center;
+}
+
+.yapping-image img{
+    width: 100%;
+    max-width: 420px;   /* ukuran ideal desktop */
+    height: auto;
+    object-fit: contain;
+}
+
+.reverse{
+    grid-template-columns: 1fr 1fr;
+}
+
+.reverse .yapping-text{
+    order: 2;
+}
+
+.reverse .yapping-image{
+    order: 1;
+}
+
+#demo{
+    padding: 80px 8%;
+    background: #ffffff;
+}
+
+#demo h2{
+    text-align: center;
+    font-size: 2rem;
+    color: #1b2c55;
+    margin-bottom: 50px;
+    font-weight: 700;
+}
+
+.demo-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+}
+
+.demo-item{
+    background: #f3f3f3;
+    padding: 20px;
+    border-radius: 12px;
+    display: grid;
+    gap: 20px;
+    justify-items: center;
+}
+
+.demo-item img{
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+
+/* BUTTONS */
+
+.button-group{
+    display: grid;
+    grid-auto-flow: column;
+    gap: 10px;
+}
+
+.btn-primary{
+    background: #5ce1e6;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.btn-primary:hover{
+    background: #38bdf8;
+}
+
+.btn-secondary{
+    background: transparent;
+    border: 2px solid #5ce1e6;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.btn-secondary:hover{
+    background: #5ce1e6;
+}
+
+
+/* FOOTER */
+
+footer{
+    background: #00154c;
+    color: white;
+    padding: 30px 8%;
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+}
+
+footer p{
+    font-size: 0.9rem;
+}
+
+.socials a{
+    color: #5ce1e6;
+    text-decoration: none;
+    margin-left: 10px;
+    font-size: 0.9rem;
+}
+
+.socials a:hover{
+    text-decoration: underline;
+}
+
+
+/* RESPONSIVE */
+
+@media (max-width: 900px){
+
+    .yapping-section{
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .yapping-image{
+        justify-content: center;
+    }
+
+    .demo-grid{
+        grid-template-columns: 1fr;
+    }
+
+    footer{
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+    }
+
+}
