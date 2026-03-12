@@ -11,11 +11,13 @@ body {
 header {
     background: #00154c;
     padding: 15px 40px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 nav {
     display: grid;
-    position: sticky;
     top: 0;
     overflow: hidden;
     grid-template-columns: auto 1fr;
@@ -112,9 +114,6 @@ main {
     width: 100%;
 }
 
-
-
-/* text area */
 .yapping-text{
     max-width: 550px;
 }
@@ -140,7 +139,6 @@ main {
     font-size: 1.1rem;
 }
 
-/* image area */
 .yapping-image{
     display: grid;
     justify-content: end;
@@ -149,7 +147,7 @@ main {
 
 .yapping-image img{
     width: 100%;
-    max-width: 420px;   /* ukuran ideal desktop */
+    max-width: 420px; 
     height: auto;
     object-fit: contain;
 }
@@ -200,9 +198,6 @@ main {
     object-fit: cover;
 }
 
-
-/* BUTTONS */
-
 .button-group{
     display: grid;
     grid-auto-flow: column;
@@ -237,9 +232,6 @@ main {
     background: #5ce1e6;
 }
 
-
-/* FOOTER */
-
 footer{
     background: #00154c;
     color: white;
@@ -264,18 +256,27 @@ footer p{
     text-decoration: underline;
 }
 
-
-/* RESPONSIVE */
-
 @media (max-width: 900px){
 
-    .yapping-section{
-        grid-template-columns: 1fr;
-        text-align: center;
+     nav ul{
+        display: none;
+    }
+
+    .reverse .yapping_text{
+        order: 1;
+    }
+
+    .reverse .yapping-image{
+        order: 2;
     }
 
     .yapping-image{
         justify-content: center;
+    }
+
+    .yapping-section{
+        grid-template-columns: 1fr;
+        text-align: center;
     }
 
     .demo-grid{
